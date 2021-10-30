@@ -1,0 +1,70 @@
+a.active-nav {
+  border-radius: 10%;
+  border-bottom: 2px solid;
+}
+a.username {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.profile-img {
+  width: 10%;
+  display: inline-block;
+}
+
+/* Login btn css */
+
+.header-login-btn {
+  background-image: linear-gradient(
+    to right,
+    #b24592 0%,
+    #f15f79 51%,
+    #b24592 100%
+  );
+}
+.header-login-btn {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.header-login-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Logout btn css */
+
+.logout-btn {
+  background-image: linear-gradient(
+    to right,
+    #e53935 0%,
+    #e35d5b 51%,
+    #e53935 100%
+  );
+}
+.logout-btn {
+  margin: 10px;
+  /* padding: 15px 45px; */
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.logout-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

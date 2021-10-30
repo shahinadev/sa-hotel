@@ -1,0 +1,36 @@
+.footer-link {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: all 150ms ease-in-out;
+  margin-bottom: 5px;
+}
+.footer-link:hover {
+  margin-left: 2px;
+}
+
+.footer-social-link {
+  text-decoration: none;
+  margin-left: 10px;
+}
+.fa,
+.footer-social-link {
+  font-size: 20px;
+}
+.payment-methods .image {
+  background-color: #fff;
+  padding: 5px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.payment-methods .image img {
+  max-width: 100px;
+  max-height: 54px;
+  width: auto;
+  height: auto;
+}

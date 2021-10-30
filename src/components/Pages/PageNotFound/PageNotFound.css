@@ -1,0 +1,33 @@
+.my-10 {
+  margin: 30px auto;
+}
+.rounded-custom {
+  border-radius: 10%;
+}
+
+.back-home-btn {
+  background-image: linear-gradient(
+    to right,
+    #b24592 0%,
+    #f15f79 51%,
+    #b24592 100%
+  );
+}
+.back-home-btn {
+  margin: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.back-home-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

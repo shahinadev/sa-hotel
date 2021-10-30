@@ -1,0 +1,45 @@
+.banner {
+  width: 100%;
+  height: 60vh;
+  background-image: url("https://i.ibb.co/Wtt8VST/SA-Banner.jpg");
+  background-position: top top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+  place-items: center;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-btn {
+  background-image: linear-gradient(
+    to right,
+    #ff4b1f 0%,
+    #ff9068 51%,
+    #ff4b1f 100%
+  );
+}
+.banner-btn {
+  margin: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  display: block;
+}
+
+.banner-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,44 @@
+.login-btn {
+  margin: 10px auto;
+  display: block;
+  width: 25%;
+}
+.my-login {
+  margin: 100px auto;
+}
+
+.login-btn {
+  background-image: linear-gradient(
+    to right,
+    #005c97 0%,
+    #363795 51%,
+    #005c97 100%
+  );
+}
+.login-btn {
+  margin: 10px;
+  /* padding: 15px 45px; */
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.login-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.google-logo {
+  margin-left: 10px;
+}
