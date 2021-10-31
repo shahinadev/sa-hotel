@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddNewRoom = () => {
+const AddNewService = () => {
   return (
     <div>
       <h1>Add New Rooms</h1>
@@ -8,4 +8,4 @@ const AddNewRoom = () => {
   );
 };
 
-export default AddNewRoom;
+export default AddNewService;

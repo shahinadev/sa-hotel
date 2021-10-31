@@ -52,39 +52,11 @@ const Header = () => {
                 className="nav-link"
                 to="/about"
               >
-                About Us
+                About
               </NavLink>
             </li>
-
             {user?.email ? (
               <>
-                <li className="nav-item">
-                  <NavLink
-                    activeClassName="active-nav"
-                    className="nav-link"
-                    to="/my_bookings"
-                  >
-                    My Bookings
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeClassName="active-nav"
-                    className="nav-link"
-                    to="/manage_all_bookings"
-                  >
-                    Manage all bookings
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeClassName="active-nav"
-                    className="nav-link"
-                    to="/add_a_new_room"
-                  >
-                    Add a new room
-                  </NavLink>
-                </li>
                 <li className="nav-item dropdown mx-2">
                   <NavLink
                     className="nav-link dropdown-toggle username"
@@ -100,39 +72,36 @@ const Header = () => {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <li>
+                    <li className="dropdown-item">
                       <NavLink
                         activeClassName="active-nav"
-                        className="dropdown-item"
-                        to="/adsh"
+                        className="nav-link"
+                        to="/my-bookings"
                       >
-                        Action
+                        My Bookings
                       </NavLink>
                     </li>
-                    <li>
+                    <li className="dropdown-item">
                       <NavLink
                         activeClassName="active-nav"
-                        className="dropdown-item"
-                        to="/actibv"
+                        className="nav-link"
+                        to="/manage-all-bookings"
                       >
-                        Another action
+                        Manage all bookings
                       </NavLink>
                     </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
+                    <li className="dropdown-item">
                       <NavLink
                         activeClassName="active-nav"
-                        className="dropdown-item"
-                        to="/test"
+                        className="nav-link"
+                        to="/add-new-service"
                       >
-                        Something else here
+                        Add a new service
                       </NavLink>
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item">
+                <li className="dropdown-item">
                   <button
                     onClick={logOut}
                     className="nav-link px-2 rounded-circle my-md-0 my-3 btn logout-btn text-light d-inline-block m-2"

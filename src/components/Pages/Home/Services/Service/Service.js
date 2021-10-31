@@ -20,7 +20,10 @@ const Service = ({ service }) => {
             <h5>
               ${price} / <small>night</small>
             </h5>
-            <Link to={`/hotel_details/${_id}`} className="btn book-btn d-block">
+            <Link
+              to={`/service_details/${_id}`}
+              className="btn book-btn d-block"
+            >
               Book Now
             </Link>
           </div>

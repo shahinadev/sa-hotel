@@ -8,9 +8,10 @@ import AuthProvider from "./context/AuthProvider";
 import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
 import Footer from "./components/Shared/Footer/Footer";
 import ManageAllBookings from "./components/PrivatePages/ManageAllBookings.js/ManageAllBookings";
-import AddNewRoom from "./components/PrivatePages/AddNewRoom/AddNewRoom";
 import MyBookings from "./components/PrivatePages/MyBookings/MyBookings";
 import About from "./components/Pages/About/About";
+import ServiceDetails from "./components/PrivatePages/ServiceDetails/ServiceDetails";
+import AddNewService from "./components/PrivatePages/AddNewService/AddNewService";
 function App() {
   return (
     <AuthProvider>
@@ -27,14 +28,17 @@ function App() {
             <About />
           </Route>
           <Route path="/account">{/* <h1>User dashboard</h1> */}</Route>
-          <PrivateRoute path="/my_bookings">
+          <PrivateRoute exact path="/my-bookings">
             <MyBookings />
           </PrivateRoute>
-          <PrivateRoute path="/manage_all_bookings">
+          <PrivateRoute exact path="/manage-all-bookings">
             <ManageAllBookings />
           </PrivateRoute>
-          <PrivateRoute path="/add_a_new_room">
-            <AddNewRoom />
+          <PrivateRoute exact path="/add-service">
+            <AddNewService />
+          </PrivateRoute>
+          <PrivateRoute exact path="/service-details/:id">
+            <ServiceDetails />
           </PrivateRoute>
           <Route path="*">
             <PageNotFound />
