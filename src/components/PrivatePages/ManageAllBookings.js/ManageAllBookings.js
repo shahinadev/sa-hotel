@@ -6,36 +6,35 @@ const ManageAllBookings = () => {
   const [isLoading, setIsLoading] = useState(true);
   const successModalRef = useRef();
   const [orders, setOrders] = useState([]);
-  const deleteModalRef = useRef(null);
-  const modelDismiss = useRef(null);
   const [update, setUpdate] = useState(false);
   //delete single booking
   const deleteBooking = (id) => {
-    setIsLoading(true);
-    axios
-      .delete(`https://fierce-thicket-55699.herokuapp.com/orders/${id}`)
-      .then((res) => {
-        if (res.data.deletedCount > 0) {
-          const newOrders = orders.filter((order) => order._id !== id);
-          setOrders(newOrders);
-          modelDismiss.current.click();
-        } else {
-          alert("something is wrong...");
-        }
-      })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setIsLoading(false);
-      });
+    const isDelete = window.confirm("do you really want to delete it?");
+    if (isDelete) {
+      axios
+        .delete(`https://fierce-thicket-55699.herokuapp.com/orders/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const newOrders = orders.filter((order) => order._id !== id);
+            setOrders(newOrders);
+            alert("deleted successfully..");
+          } else {
+            alert("something is wrong...");
+          }
+        })
+        .catch((err) => console.log(err))
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
   };
   //change booking pending status
   const changeStatus = (id) => {
-    setIsLoading(true);
     axios
       .put(`https://fierce-thicket-55699.herokuapp.com/orders/`, { id })
       .then((res) => {
         setUpdate(true);
-        console.log(res.data);
+        successModalRef.current.click();
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -60,7 +59,9 @@ const ManageAllBookings = () => {
     <>
       <div className="container">
         <h1>My All Bookings</h1>
-        {!orders.length > 0 ? (
+        {isLoading ? (
+          <Loading />
+        ) : !orders.length > 0 ? (
           <>
             <p className="display-6 text-center">No Data Found</p>
           </>
@@ -98,12 +99,6 @@ const ManageAllBookings = () => {
                               <td>{order.address}</td>
                               <td>{order.status}</td>
                               <td>
-                                <a
-                                  ref={deleteModalRef}
-                                  href="#myModal"
-                                  class="trigger-btn"
-                                  data-toggle="modal"
-                                ></a>
                                 <button
                                   onClick={() => deleteBooking(order._id)}
                                   className="delete"
@@ -134,50 +129,6 @@ const ManageAllBookings = () => {
         )}
       </div>
 
-      {/* Delete Modal */}
-      <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-confirm">
-          <div class="modal-content">
-            <div class="modal-header flex-column">
-              <div class="icon-box">
-                <i class="material-icons">&#xE5CD;</i>
-              </div>
-              <h4 class="modal-title w-100">Are you sure?</h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-hidden="true"
-              >
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>
-                Do you really want to delete these records? This process cannot
-                be undone.
-              </p>
-            </div>
-            <div class="modal-footer justify-content-center">
-              <button
-                ref={modelDismiss}
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button
-                // onClick={deleteBooking}
-                type="button"
-                class="btn btn-danger"
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
       <a href="#myModal" data-toggle="modal" ref={successModalRef}></a>
       <div id="myModal" class="modal fade">
         <div class="modal-dialog modal-confirm">
@@ -190,7 +141,7 @@ const ManageAllBookings = () => {
             </div>
             <div class="modal-body">
               <p class="text-center">
-                Service Status is changed successfully...
+                booking Status is changed successfully...
               </p>
             </div>
             <div class="modal-footer">
