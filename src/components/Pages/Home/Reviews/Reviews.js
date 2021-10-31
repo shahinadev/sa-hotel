@@ -2,28 +2,28 @@ import React from "react";
 import "./Reviews.css";
 const Reviews = () => {
   return (
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
+    <div className="container my-5">
+      <div className="row">
+        <div className="col-lg-8 mx-auto">
           <h2>Testimonials</h2>
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div id="myCarousel" className="carousel slide" data-ride="carousel">
             {/* <!-- Carousel indicators --> */}
-            <ol class="carousel-indicators">
+            <ol className="carousel-indicators">
               <li
                 data-target="#myCarousel"
                 data-slide-to="0"
-                class="active"
+                className="active"
               ></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             {/* <!-- Wrapper for carousel items --> */}
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="img-box">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div className="img-box">
                   <img src="https://i.ibb.co/6BgVGXF/team-1.png" alt="" />
                 </div>
-                <p class="testimonial">
+                <p className="testimonial">
                   This is our first trip ever since Pandemic hits the world. We
                   miss Bali so much and decided to make this trip as our wedding
                   anniversary trip that has been delayed 2 years (just us no
@@ -38,25 +38,25 @@ const Reviews = () => {
                   to celebrate our anniversary and gave us a chocolate cake. The
                   team really make sure that we experienced…
                 </p>
-                <p class="overview">
+                <p className="overview">
                   <b>Tabasum Khan</b>, Seo Analyst
                 </p>
               </div>
             </div>
             {/* <!-- Carousel controls --> */}
             <a
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               href="#myCarousel"
               data-slide="prev"
             >
-              <i class="fa fa-angle-left"></i>
+              <i className="fa fa-angle-left"></i>
             </a>
             <a
-              class="carousel-control-next"
+              className="carousel-control-next"
               href="#myCarousel"
               data-slide="next"
             >
-              <i class="fa fa-angle-right"></i>
+              <i className="fa fa-angle-right"></i>
             </a>
           </div>
         </div>

@@ -5,8 +5,8 @@ const OurAchievement = () => {
   // https://i.ibb.co/7bcd8fB/2016-Winner-Logo-Black-01.png
   return (
     <div className="container my-5">
-      <h2 classNam="fw-normal my-5">Our Achievement</h2>
-      <h4 classNam="fw-normal m-0" style={{ textAlign: "center" }}>
+      <h2 className="fw-normal my-5">Our Achievement</h2>
+      <h4 className="fw-normal m-0" style={{ textAlign: "center" }}>
         Winning Multiple World Hotel Agency Awards
       </h4>
       <div className="row my-3 mx-auto justify-content-center align-items-center">

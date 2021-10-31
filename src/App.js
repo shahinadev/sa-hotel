@@ -10,7 +10,7 @@ import Footer from "./components/Shared/Footer/Footer";
 import ManageAllBookings from "./components/PrivatePages/ManageAllBookings.js/ManageAllBookings";
 import MyBookings from "./components/PrivatePages/MyBookings/MyBookings";
 import About from "./components/Pages/About/About";
-import ServiceDetails from "./components/PrivatePages/ServiceDetails/ServiceDetails";
+import PlaceOrder from "./components/PrivatePages/PlaceOrder/PlaceOrder";
 import AddNewService from "./components/PrivatePages/AddNewService/AddNewService";
 function App() {
   return (
@@ -37,8 +37,8 @@ function App() {
           <PrivateRoute exact path="/add-service">
             <AddNewService />
           </PrivateRoute>
-          <PrivateRoute exact path="/service-details/:id">
-            <ServiceDetails />
+          <PrivateRoute exact path="/place-order/:id">
+            <PlaceOrder />
           </PrivateRoute>
           <Route path="*">
             <PageNotFound />

@@ -94,7 +94,7 @@ const Header = () => {
                       <NavLink
                         activeClassName="active-nav"
                         className="nav-link"
-                        to="/add-new-service"
+                        to="/add-service"
                       >
                         Add a new service
                       </NavLink>
