@@ -3,16 +3,17 @@ import axios from "axios";
 import Loading from "./../../Shared/Loading/Loading";
 import "../MyBookings/MyBookings.css";
 const ManageAllBookings = () => {
+  const successModalRef = useRef();
   const [orders, setOrders] = useState([]);
-  const [id, setId] = useState("");
+  const [deleteId, setId] = useState("");
   const deleteModalRef = useRef(null);
   const modelDismiss = useRef(null);
   const [update, setUpdate] = useState(false);
   //delete single booking
   const deleteBooking = () => {
-    axios.delete(`http://localhost:8080/orders/${id}`).then((res) => {
+    axios.delete(`http://localhost:8080/orders/${deleteId}`).then((res) => {
       if (res.data.deletedCount > 0) {
-        const newOrders = orders.filter((order) => order._id !== id);
+        const newOrders = orders.filter((order) => order._id !== deleteId);
         setOrders(newOrders);
         modelDismiss.current.click();
       } else {
@@ -20,15 +21,14 @@ const ManageAllBookings = () => {
       }
     });
   };
-  const approved = () => {
-    axios.put(`http://localhost:8080/orders/${id}`).then((res) => {
-      if (res.data.deletedCount > 0) {
-        modelDismiss.current.click();
+  const approved = (id) => {
+    axios
+      .put(`http://localhost:8080/orders/`, { id })
+      .then((res) => {
         setUpdate(true);
-      } else {
-        alert("something is wrong...");
-      }
-    });
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     const url = `http://localhost:8080/orders/`;
@@ -101,7 +101,7 @@ const ManageAllBookings = () => {
                                   </i>
                                 </button>
                                 <button
-                                  onClick={approved}
+                                  onClick={() => approved(order._id)}
                                   className="btn btn-success"
                                 >
                                   Approved
@@ -159,6 +159,29 @@ const ManageAllBookings = () => {
                 class="btn btn-danger"
               >
                 Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#myModal" data-toggle="modal" ref={successModalRef}></a>
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="icon-box">
+                <i class="material-icons">&#xE876;</i>
+              </div>
+              <h4 class="modal-title w-100">Awesome!</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center">
+                Service Status is changed successfully...
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success btn-block" data-dismiss="modal">
+                OK
               </button>
             </div>
           </div>

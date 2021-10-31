@@ -9,9 +9,12 @@ const MyBookings = () => {
   const deleteModalRef = useRef(null);
   const dissmissModal = useRef(null);
   const { user } = useAuth();
+
+  //delete booking
   const deleteBooking = () => {
     axios.delete(`http://localhost:8080/orders/${id}`).then((res) => {
       if (res.data.deletedCount > 0) {
+        //filter orders after delete successfully..
         const newOrders = orders.filter((order) => order._id !== id);
         setOrders(newOrders);
         dissmissModal.current.click();
