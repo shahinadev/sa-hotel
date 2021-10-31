@@ -28,8 +28,8 @@ const ManageAllBookings = () => {
         setIsLoading(false);
       });
   };
-  //change order status
-  const approved = (id) => {
+  //change booking pending status
+  const changeStatus = (id) => {
     setIsLoading(true);
     axios
       .put(`https://fierce-thicket-55699.herokuapp.com/orders/`, { id })
@@ -60,9 +60,7 @@ const ManageAllBookings = () => {
     <>
       <div className="container">
         <h1>My All Bookings</h1>
-        {isLoading ? (
-          <Loading />
-        ) : !orders.length > 0 ? (
+        {!orders.length > 0 ? (
           <>
             <p className="display-6 text-center">No Data Found</p>
           </>
@@ -117,7 +115,7 @@ const ManageAllBookings = () => {
                                   </i>
                                 </button>
                                 <button
-                                  onClick={() => approved(order._id)}
+                                  onClick={() => changeStatus(order._id)}
                                   className="btn btn-success"
                                 >
                                   Approved

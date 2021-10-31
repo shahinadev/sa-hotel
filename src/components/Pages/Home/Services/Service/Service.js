@@ -10,8 +10,8 @@ const Service = ({ service }) => {
         <div className="card shadow-sm border-1">
           <img
             src={service_img}
-            className="card-img-top img-fluid rounded-5"
-            alt="..."
+            className="card-img-top h-20 img-fluid rounded-5"
+            alt="service img"
           />
           <div className="card-body">
             <h4 className="card-title fw-500">{service_name}</h4>
@@ -19,7 +19,7 @@ const Service = ({ service }) => {
               <i class="fas fa-map-marker-alt"></i>
               {location}
             </p>
-            <p className="card-text my-3">{description.slice(0, 50)}</p>
+            <p className="card-text my-3">{description.slice(0, 50)}....</p>
             <span>Starts from</span>
             <h5>
               ${price} / <small>night</small>

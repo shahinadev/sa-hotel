@@ -9,7 +9,7 @@ const About = () => {
       <div className="container about-body">
         <h1 className="fw-normal">Who are we?</h1>
         <p>
-          SA Trip Hotel Ltd is the country’s first and leading online travel
+          SA Hotel Booking Ltd is the country’s first and leading online travel
           aggregator. Initially started with the name Travel Booking BD, we had
           a dream to make travel easier for people. And that is what we did
           since our inception. And now with our new, innovative, easy to use
@@ -18,7 +18,7 @@ const About = () => {
           packages around the globe.
         </p>
         <p>
-          SA Trip Hotel Ltd is the country’s first and leading online travel
+          SA Hotel Booking Ltd is the country’s first and leading online travel
           aggregator. Initially started with the name Travel Booking BD, we had
           a dream to make travel easier for people. And that is what we did
           since our inception. And now with our new, innovative, easy to use

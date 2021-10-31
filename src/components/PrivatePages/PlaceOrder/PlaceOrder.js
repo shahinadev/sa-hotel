@@ -4,7 +4,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import useAuth from "./../../../hooks/useAuth";
 import Modal from "./../../Pages/Modal/Modal";
-
+import "./PlaceOrder.css";
 const PlaceOrder = () => {
   const modalRef = useRef(null);
   const { id } = useParams();
@@ -50,7 +50,7 @@ const PlaceOrder = () => {
   }, []);
   return (
     <>
-      <div className="container mb-5">
+      <div className="container mb-5 mt-0">
         <div className="row">
           <div className="col">
             <img
@@ -64,7 +64,7 @@ const PlaceOrder = () => {
           </div>
         </div>
         <section className="we_are_ready_sectoion we_are_ready_two we_are_ready_three">
-          <div className="container">
+          <div className="container my-5">
             <div className="we_are_content">
               <div className="online_booking">
                 <h2>Book Hotel Now</h2>
@@ -158,7 +158,7 @@ const PlaceOrder = () => {
                   <div className="col-lg-12 col-sm-12 form-group custom_button">
                     <Modal></Modal>
                     <a href="#myModal" data-toggle="modal" ref={modalRef}></a>
-                    <button type="submit" className="btn login-btn">
+                    <button type="submit" className="btn login-btn w-lg-0 w-50">
                       Book
                     </button>
                   </div>
