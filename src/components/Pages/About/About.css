@@ -1,0 +1,9 @@
+.header {
+  background-image: url("https://i.ibb.co/nmN99xK/b2bhome-Map.png");
+  background-size: cover;
+  height: 10vh;
+  background-position: 50%;
+  line-height: 10vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

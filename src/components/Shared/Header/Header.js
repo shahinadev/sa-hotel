@@ -46,6 +46,15 @@ const Header = () => {
                 Services
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                activeClassName="active-nav"
+                className="nav-link"
+                to="/about"
+              >
+                About Us
+              </NavLink>
+            </li>
 
             {user?.email ? (
               <>

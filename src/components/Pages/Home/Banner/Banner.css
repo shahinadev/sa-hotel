@@ -28,6 +28,7 @@
 .banner-btn {
   margin: 10px;
   padding: 10px 15px;
+  width: max-content;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;

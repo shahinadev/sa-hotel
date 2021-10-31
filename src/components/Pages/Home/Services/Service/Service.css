@@ -1,0 +1,32 @@
+.book-btn {
+  background-image: linear-gradient(
+    to right,
+    #005c97 0%,
+    #363795 51%,
+    #005c97 100%
+  );
+}
+.book-btn {
+  width: max-content;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.book-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.book-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

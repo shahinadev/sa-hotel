@@ -7,9 +7,10 @@ import Header from "./components/Shared/Header/Header";
 import AuthProvider from "./context/AuthProvider";
 import PageNotFound from "./components/Pages/PageNotFound/PageNotFound";
 import Footer from "./components/Shared/Footer/Footer";
-import MyBookings from "./components/MyBookings/MyBookings";
 import ManageAllBookings from "./components/PrivatePages/ManageAllBookings.js/ManageAllBookings";
 import AddNewRoom from "./components/PrivatePages/AddNewRoom/AddNewRoom";
+import MyBookings from "./components/PrivatePages/MyBookings/MyBookings";
+import About from "./components/Pages/About/About";
 function App() {
   return (
     <AuthProvider>
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/account">{/* <h1>User dashboard</h1> */}</Route>
           <PrivateRoute path="/my_bookings">

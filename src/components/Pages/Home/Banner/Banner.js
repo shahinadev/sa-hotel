@@ -5,9 +5,9 @@ const Banner = () => {
   return (
     <header className="banner d-grid">
       <div className="container position-absolute text-center  text-light">
-        <h1>SA Hotel Booking Ltd</h1>
+        <h1 className="text-light my-5">SA Hotel Booking Ltd</h1>
         <h4>Book your Favorite Hotel or Resort</h4>
-        <Link to="#services" className="btn banner-btn w-25 mx-auto my-5">
+        <Link to="#services" className="btn banner-btn mx-auto my-5">
           Book Now
         </Link>
       </div>
