@@ -16,7 +16,7 @@ const AddNewService = () => {
     newData.status = "pending";
     try {
       const result = await axios.post(
-        "http://localhost:8080/add-service",
+        "https://fierce-thicket-55699.herokuapp.com/add-service",
         newData
       );
       reset();

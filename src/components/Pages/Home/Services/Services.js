@@ -1,26 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Service from "./Service/Service";
 import axios from "axios";
 import Loading from "./../../../Shared/Loading/Loading";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  /* 
-https://i.ibb.co/NxxTntG/hotel-3.jpg
-https://i.ibb.co/Zx1YMNd/hotel-4.jpg
-https://i.ibb.co/Zx1YMNd/hotel-4.jpg
-https://i.ibb.co/SBKRkc6/hotel-6.jpg
-https://i.ibb.co/BLXzngW/hotel-7.jpg
-https://i.ibb.co/YBn6003/hotel-8.jpg
-https://i.ibb.co/FVc5W9Q/hotel-9.jpg
-https://i.ibb.co/sbzBr6M/hotel.jpg
-https://i.ibb.co/VJZPh3G/hotel-1.jpg
-https://i.ibb.co/whsK9yb/hotel-2.jpg */
-
   useEffect(() => {
     axios
-      .get("http://localhost:8080/services")
+      .get("https://fierce-thicket-55699.herokuapp.com/services")
       .then((result) => {
         setServices(result.data);
       })

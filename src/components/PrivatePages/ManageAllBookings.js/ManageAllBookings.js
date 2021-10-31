@@ -10,20 +10,22 @@ const ManageAllBookings = () => {
   const modelDismiss = useRef(null);
   const [update, setUpdate] = useState(false);
   //delete single booking
-  const deleteBooking = () => {
-    axios.delete(`http://localhost:8080/orders/${deleteId}`).then((res) => {
-      if (res.data.deletedCount > 0) {
-        const newOrders = orders.filter((order) => order._id !== deleteId);
-        setOrders(newOrders);
-        modelDismiss.current.click();
-      } else {
-        alert("something is wrong...");
-      }
-    });
+  const deleteBooking = (id) => {
+    axios
+      .delete(`https://fierce-thicket-55699.herokuapp.com/orders/${id}`)
+      .then((res) => {
+        if (res.data.deletedCount > 0) {
+          const newOrders = orders.filter((order) => order._id !== id);
+          setOrders(newOrders);
+          modelDismiss.current.click();
+        } else {
+          alert("something is wrong...");
+        }
+      });
   };
   const approved = (id) => {
     axios
-      .put(`http://localhost:8080/orders/`, { id })
+      .put(`https://fierce-thicket-55699.herokuapp.com/orders/`, { id })
       .then((res) => {
         setUpdate(true);
         console.log(res.data);
@@ -31,7 +33,7 @@ const ManageAllBookings = () => {
       .catch((err) => console.log(err));
   };
   useEffect(() => {
-    const url = `http://localhost:8080/orders/`;
+    const url = `https://fierce-thicket-55699.herokuapp.com/orders/`;
     axios
       .get(url)
       .then((result) => setOrders(result.data))
@@ -88,10 +90,7 @@ const ManageAllBookings = () => {
                                   data-toggle="modal"
                                 ></a>
                                 <button
-                                  onClick={() => {
-                                    deleteModalRef.current.click();
-                                    setId(order._id);
-                                  }}
+                                  onClick={() => deleteBooking(order._id)}
                                   className="delete"
                                   title="Delete"
                                   data-toggle="tooltip"
@@ -154,7 +153,7 @@ const ManageAllBookings = () => {
                 Cancel
               </button>
               <button
-                onClick={deleteBooking}
+                // onClick={deleteBooking}
                 type="button"
                 class="btn btn-danger"
               >

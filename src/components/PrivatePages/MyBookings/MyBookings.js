@@ -12,19 +12,21 @@ const MyBookings = () => {
 
   //delete booking
   const deleteBooking = () => {
-    axios.delete(`http://localhost:8080/orders/${id}`).then((res) => {
-      if (res.data.deletedCount > 0) {
-        //filter orders after delete successfully..
-        const newOrders = orders.filter((order) => order._id !== id);
-        setOrders(newOrders);
-        dissmissModal.current.click();
-      } else {
-        alert("something is wrong...");
-      }
-    });
+    axios
+      .delete(`https://fierce-thicket-55699.herokuapp.com/orders/${id}`)
+      .then((res) => {
+        if (res.data.deletedCount > 0) {
+          //filter orders after delete successfully..
+          const newOrders = orders.filter((order) => order._id !== id);
+          setOrders(newOrders);
+          dissmissModal.current.click();
+        } else {
+          alert("something is wrong...");
+        }
+      });
   };
   useEffect(() => {
-    const url = `http://localhost:8080/orders/?email=${user.email}`;
+    const url = `https://fierce-thicket-55699.herokuapp.com/orders/?email=${user.email}`;
     axios
       .get(url)
       .then((result) => setOrders(result.data))

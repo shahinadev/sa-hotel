@@ -27,7 +27,7 @@ const PlaceOrder = () => {
     newData.service_id = service._id;
     try {
       const result = await axios.post(
-        "http://localhost:8080/add-order",
+        "https://fierce-thicket-55699.herokuapp.com/add-order",
         newData
       );
       reset();
@@ -40,7 +40,7 @@ const PlaceOrder = () => {
   useEffect(() => {
     //fetch the single service by id form api
     axios
-      .get(`http://localhost:8080/services/${id}`)
+      .get(`https://fierce-thicket-55699.herokuapp.com/services/${id}`)
       .then((result) => {
         setService(result.data);
       })
