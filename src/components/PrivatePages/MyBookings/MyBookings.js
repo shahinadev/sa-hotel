@@ -4,6 +4,7 @@ import useAuth from "./../../../hooks/useAuth";
 import Loading from "./../../Shared/Loading/Loading";
 import "./MyBookings.css";
 const MyBookings = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [orders, setOrders] = useState([]);
   const [id, setId] = useState("");
   const deleteModalRef = useRef(null);
@@ -12,6 +13,7 @@ const MyBookings = () => {
 
   //delete booking
   const deleteBooking = () => {
+    setIsLoading(true);
     axios
       .delete(`https://fierce-thicket-55699.herokuapp.com/orders/${id}`)
       .then((res) => {
@@ -23,22 +25,34 @@ const MyBookings = () => {
         } else {
           alert("something is wrong...");
         }
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
       });
   };
   useEffect(() => {
+    setIsLoading(true);
     const url = `https://fierce-thicket-55699.herokuapp.com/orders/?email=${user.email}`;
     axios
       .get(url)
       .then((result) => setOrders(result.data))
       .catch((err) => {
         console.log(err);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
   return (
     <>
       <div className="container">
         <h1>My Bookings</h1>
-        {!orders.length > 0 ? (
+
+        {isLoading ? (
+          <Loading />
+        ) : orders.length === 0 ? (
           <>
             <p className="display-6 text-center">No Data Found</p>
           </>

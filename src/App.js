@@ -12,6 +12,7 @@ import MyBookings from "./components/PrivatePages/MyBookings/MyBookings";
 import About from "./components/Pages/About/About";
 import PlaceOrder from "./components/PrivatePages/PlaceOrder/PlaceOrder";
 import AddNewService from "./components/PrivatePages/AddNewService/AddNewService";
+import Services from "./components/Pages/Home/Services/Services";
 function App() {
   return (
     <AuthProvider>
@@ -27,7 +28,9 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/account">{/* <h1>User dashboard</h1> */}</Route>
+          <Route path="/services">
+            <Services />
+          </Route>
           <PrivateRoute exact path="/my-bookings">
             <MyBookings />
           </PrivateRoute>

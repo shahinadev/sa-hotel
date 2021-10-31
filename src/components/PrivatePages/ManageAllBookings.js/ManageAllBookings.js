@@ -3,14 +3,15 @@ import axios from "axios";
 import Loading from "./../../Shared/Loading/Loading";
 import "../MyBookings/MyBookings.css";
 const ManageAllBookings = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const successModalRef = useRef();
   const [orders, setOrders] = useState([]);
-  const [deleteId, setId] = useState("");
   const deleteModalRef = useRef(null);
   const modelDismiss = useRef(null);
   const [update, setUpdate] = useState(false);
   //delete single booking
   const deleteBooking = (id) => {
+    setIsLoading(true);
     axios
       .delete(`https://fierce-thicket-55699.herokuapp.com/orders/${id}`)
       .then((res) => {
@@ -21,31 +22,47 @@ const ManageAllBookings = () => {
         } else {
           alert("something is wrong...");
         }
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
       });
   };
+  //change order status
   const approved = (id) => {
+    setIsLoading(true);
     axios
       .put(`https://fierce-thicket-55699.herokuapp.com/orders/`, { id })
       .then((res) => {
         setUpdate(true);
         console.log(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   useEffect(() => {
+    setIsLoading(true);
     const url = `https://fierce-thicket-55699.herokuapp.com/orders/`;
     axios
       .get(url)
       .then((result) => setOrders(result.data))
       .catch((err) => {
         console.log(err);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
       });
   }, [update]);
   return (
     <>
       <div className="container">
         <h1>My All Bookings</h1>
-        {!orders.length > 0 ? (
+        {isLoading ? (
+          <Loading />
+        ) : !orders.length > 0 ? (
           <>
             <p className="display-6 text-center">No Data Found</p>
           </>
