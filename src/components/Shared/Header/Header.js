@@ -8,7 +8,7 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg sticky-top top-0 navbar-light bg-light">
       <div className="container">
         <Link className="navbar-brand" to="#">
-          SA Super Hotel
+          SA Hotel Booking
         </Link>
         <button
           className="navbar-toggler"
